@@ -31,7 +31,7 @@ transporter.verify((err) => {
 
 const start = async () => {
   while (true) {
-    const now = new Date()
+    const now = new Date().toLocaleString("en-US", { timeZone: 'Europe/Istanbul' })
     let millisTill10 =
       new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0, 0, 0) -
       now
