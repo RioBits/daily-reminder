@@ -31,10 +31,10 @@ transporter.verify((err) => {
 
 const start = async () => {
   while (true) {
-    const now = new Date().toLocaleString("en-US", { timeZone: 'Europe/Istanbul' })
+    const now = new Date()
     let millisTill10 =
       new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0, 0, 0) -
-      now
+      now.toLocaleString("en-US", { timeZone: 'Europe/Istanbul' })
 
     if (millisTill10 < 0) {
       millisTill10 += 86400000 // it's after 10pm, try 10pm tomorrow.
