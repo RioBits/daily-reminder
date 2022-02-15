@@ -29,11 +29,12 @@ transporter.verify((err) => {
   }
 })
 
+// TODO: Make it work on Europe/Istanbul timezone
 const start = async () => {
   while (true) {
-    const now = new Date().toLocaleString("en-US", { timeZone: 'Europe/Istanbul' })
+    const now = new Date()
     let millisTill10 =
-      new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0, 0, 0).toLocaleString("en-US", { timeZone: 'Europe/Istanbul' }) -
+      new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0, 0, 0) -
       now
     if (millisTill10 < 0) {
       millisTill10 += 86400000 // it's after 10pm, try 10pm tomorrow.
