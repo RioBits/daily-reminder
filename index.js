@@ -29,7 +29,6 @@ transporter.verify((err) => {
   }
 })
 
-// TODO: Make it work on Europe/Istanbul timezone
 const start = async () => {
   while (true) {
     const now = new Date()
@@ -54,7 +53,7 @@ const start = async () => {
             }
           })
           resolve()
-        }, millisTill10)
+        }, Number(millisTill10.toLocaleString('en-US', 'Europe/Istanbul').replace(/,/g, '')))
       })
     }
     await newReminder()
